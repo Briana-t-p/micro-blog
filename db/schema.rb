@@ -25,11 +25,15 @@ ActiveRecord::Schema.define(version: 20180406203519) do
     t.string "summary", limit: 150
     t.text "content"
     t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string "fname"
     t.string "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
