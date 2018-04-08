@@ -6,7 +6,7 @@ end
 class Post < ActiveRecord::Base
 belongs_to :user
 has_many :classifications, through: :classifications#catagories
-en
+end
 
 #catagories
 class Classification < ActiveRecord::Base
