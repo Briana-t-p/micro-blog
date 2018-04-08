@@ -1,1 +1,23 @@
 <h1>this is a home</h1>
+<h1>Sign Up</h1>
+<form class="" action="/post/new" method="post">
+    <input type="text" name="[post]fname" placeholder="User Name">
+    <input type="text" name="[post]password" placeholder="Password">
+    <input type="submit" name="" value="Submit">
+</form>
+
+<h1>Sign in</h1>
+<form class="" action="/profile" method="post">
+    <input type="text" name="fname" placeholder="First Name">
+    <input type="text" name="password" placeholder="Password">
+    <input type="submit" name="" value="Submit">
+</form>
+
+<h4><% @users.each do |user| %></h4>
+<p>Name: <%= user.fname %></p>
+  <% end %>
+  <h4><% @posts.each do |post| %></h4>
+  <p>Poster: <%= post.user_id%></p>
+  <p>Post: <%= post.summary %></p>
+  <p>Post: <%= post.content %></p>
+  <% end %>
