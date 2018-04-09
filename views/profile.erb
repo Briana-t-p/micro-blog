@@ -1,3 +1,7 @@
 <h1>this is the profile page</h1>
+<% if current_user %>
+    <h2><%= current_user.fname %> Profile</h2>
+<% end %>
+
 <h4><a href="/edit">Edit</a></h4>
 <h4><a href="/post">Add recipe</a></h4>
