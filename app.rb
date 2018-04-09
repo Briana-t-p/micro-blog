@@ -7,16 +7,50 @@ enable :sessions
 
 set :database, "sqlite3:micro_blog.sqlite3"
 
+def current_user
+    if session[:user_id]
+        @current_user = User.find(session[:user_id])
+    end
+end
+
+
 get '/' do
+  @users = User.all
+  @posts = Post.all
   erb :home
+end
+
+post '/users/new' do
+    puts "****************************"
+    puts params
+    puts "****************************"
+    User.create(params[:post])
+    redirect '/'
+end
+
+post '/posts/new' do
+  puts "****************************"
+  puts params
+  puts "****************************"
+  Post.create(params[:post])
+  redirect '/'
 end
 
 get '/post' do
   erb :post
 end
 
+
 get '/profile' do
   erb :profile
+end
+
+post '/profile' do
+    @user = User.where(fname: params[:fname]).first
+    if @user.password == params[:password]
+        session[:user_id] = @user.id
+        redirect '/profile'
+end
 end
 
 get '/edit' do
