@@ -42,10 +42,7 @@ post '/posts/new' do
 end
 
 get '/post' do
-  if session[:user_id] = nil
-    redirect '/error'
-      end
-  erb :error
+  erb :post
 end
 
 get '/user/:id' do
