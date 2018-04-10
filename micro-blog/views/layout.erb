@@ -2,16 +2,14 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
     <title></title>
   </head>
   <body>
     <header>
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/profile">Profile</a></li>
-        <li><a href="/signout">Sign-Out</a></li>
-
-    </ul>
+      <button onclick="/" id="home">HOME</button>
+      <button onclick="/profile" id="profile">PROFILE</button>
+      <button onclick="/signout" id="signout">SIGN-OUT</button></li>
     </header>
 <%= yield %>
 
