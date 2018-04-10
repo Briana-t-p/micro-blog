@@ -1,7 +1,15 @@
 <h1>this is the profile page</h1>
-<% if current_user %>
-    <h2><%= current_user.fname %> Profile</h2>
+<% if @current_user %>
+    <h2><%= @current_user.fname %> Profile</h2>
+
+    <h2><% @current_user.posts.each do |post|%></h2>
+
+<div id="recipe">
+<h4><%= post.summary%></h4>
+<p><%= post.content%></p>
+    <%end%>
 <% end %>
+</div>
 
 <h4><a href="/edit">Edit</a></h4>
 <h4><a href="/post">Add recipe</a></h4>
