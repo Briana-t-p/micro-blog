@@ -1,8 +1,11 @@
 
+<!-- shows who's logged in -->
 <% if @current_user %>
-    <h2>Is logged in:<%= @current_user.fname %></h2>
+    <h2><%= @current_user.fname %> is logged in.</h2>
 <%end%>
 
+
+<!-- shows another users posts -->
 <% if @user %>
     <h2><%= @user.fname %> Profile</h2>
 

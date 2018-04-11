@@ -1,10 +1,13 @@
 
-<h4><a href="/profile">Back to profile</a></h4>
+
+<button onclick="location.href='/profile'" id="profile">BACK TO PROFILE</button>
+
+<!-- shows who's logged in -->
 <% if @current_user %>
     <h2>this is <%= @current_user.fname %>'s post page</h2>
 <% end %>
 
-
+<!-- input fields for you recipe -->
 <form class="" action="/posts/new" method="post">
 <input type="text" name="[post]summary" placeholder="Quick description" maxlength="150" required>
 <input type="text" name="[post]content" placeholder="Full recipe" required>
