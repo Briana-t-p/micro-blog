@@ -1,11 +1,14 @@
 <link href="styles/layoutstyles.css" rel="stylesheet" type="text/css">
 <!-- shows who's logged in -->
+
+<button onclick="location.href='/delete'" id="profile">DELETE PROFILE</button>
+
+
 <% if @current_user %>
     <h2><%= @current_user.fname %>'s Profile</h2>
 
     <h2><% @current_user.posts.each do |post|%></h2>
 
-    <button onclick="location.href='/delete'" id="profile">DELETE PROFILE</button>
 
 <!-- this shows all your recipes -->
 <div id="recipe">
