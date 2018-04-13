@@ -2,7 +2,8 @@
 <!-- shows who's logged in -->
 
 <button onclick="location.href='/delete'" id="profile">DELETE PROFILE</button>
-
+<button onclick="location.href='/edit'" id="edit">Edit Name</button>
+<button onclick="location.href='/post'" id="addRecipe">Add recipe</button>
 
 <% if @current_user %>
     <h2><%= @current_user.fname %>'s Profile</h2>
@@ -14,10 +15,12 @@
 <div id="recipe">
 <h4><%= post.summary%></h4>
 <p><%= post.content%></p>
+<form class="" action="/delete_post/<%= post.id%>" method="post">
+  <input type="submit" name="<%= post.id%>" value="Delete posts">
+</form>
+  <button onclick="location.href='/posts_edit/<%= post.id %>'" id="edit">Edit Recipe</button>
     <%end%>
 <% end %>
 </div>
 
 <!-- this user options to edit account and add recipe. we didn't finish edit option-->
-<button onclick="location.href='/edit'" id="edit">Edit</button>
-<button onclick="location.href='/post'" id="addRecipe">Add recipe</button>
