@@ -1,0 +1,6 @@
+<form class="" action="/posts_edit/<%=@post.id%>" method="post">
+  <input type="hidden" name="_method" value="PUT">
+  <input type="text" name="[update]summary" value="<%= @post.summary %>">
+  <input type="text" name="[update]content" value="<%= @post.content %>">
+  <input type="submit" name="" value="submit">
+</form>
