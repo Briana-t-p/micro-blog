@@ -83,7 +83,7 @@ def delete_user
 end
 
 #this is how you delete your account
-get '/delete' do
+get '/delete' do 
   current_user
   delete_user
   erb :delete

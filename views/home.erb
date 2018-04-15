@@ -1,23 +1,25 @@
+<link href="styles/layoutstyles.css" rel="stylesheet" type="text/css">
 
 <!-- to create a new account -->
 <h3>Sign Up</h3>
-<form class="" action="/users/new" method="post">
-    <input type="text" name="[post]fname" placeholder="User Name">
-    <input type="text" name="[post]password" placeholder="Password">
-    <input type="submit" name="" value="Submit">
-</form>
+    <form class="" action="/users/new" method="post">
+        <input type="text" name="[post]fname" placeholder="User Name">
+        <input type="text" name="[post]password" placeholder="Password">
+        <input type="submit" name="" value="Submit">
+    </form>
 
 <!-- to sign in as an existing user -->
 <h3>Sign in</h3>
-<form class="" action="/profile" method="post">
-    <input type="text" name="fname" placeholder="First Name">
-    <input type="text" name="password" placeholder="Password">
-    <input type="submit" name="" value="Submit">
-</form>
+    <form class="" action="/profile" method="post">
+        <input type="text" name="fname" placeholder="First Name">
+        <input type="text" name="password" placeholder="Password">
+        <input type="submit" name="" value="Submit">
+    </form>
 
 <!-- this is the feed of most recent posts with user name of who posted it. the user name can be clicked so you can get more details about recipe -->
 
-  <h4><% @posts.each do |post| %></h4>
+    <h4><% @posts.each do |post| %></h4>
 
-  <h4><a href="/member/<%= post.user.id %>"><%= post.user.fname %></a></h4>   <p><%= post.summary %></p>
-  <% end %>
+        <h4><a href="/member/<%= post.user.id %>"><%= post.user.fname %></a></h4>   <p><%= post.summary %></p>
+
+        <% end %>
