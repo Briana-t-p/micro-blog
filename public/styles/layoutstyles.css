@@ -2,10 +2,30 @@ h1, h2, h3, h4 {
   font-family: Arial;
 }
 
-#test {
+#test{
+  width: auto;
   background-color: blue;
   border-color: red;
 }
 button{
-  color: green;
+    color: green;
+    border: 1px solid #b35900;
+    padding: 10px;
+    border-radius: 5px;
+}
+header {
+    width: auto;
+    border: 5px solid #f9ffe6;
+    padding: 20px;
+    margin: 0px;
+    background-color: #ffcc99;
+}
+
+
+#recipe {
+    width: auto;
+    border: 25px solid #b35900;
+    padding: 50px;
+    margin: 50px;
+    background-color: #eeeedd;
 }

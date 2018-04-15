@@ -1,4 +1,4 @@
-
+  <link href="styles/layoutstyles.css" rel="stylesheet" type="text/css">
 <!-- shows who's logged in -->
 <% if @current_user %>
     <h2><%= @current_user.fname %> is logged in.</h2>
@@ -8,11 +8,10 @@
 <!-- shows another users posts -->
 <% if @user %>
     <h2><%= @user.fname %> Profile</h2>
-
-    <h2><% @user.posts.each do |post|%></h2>
-
-<div id="recipe">
-<h4><%= post.summary%></h4>
-<p><%= post.content%></p>
+    <% @user.posts.each do |post|%>
+      <div id="recipe">
+        <h4><%= post.summary%></h4>
+        <p><%= post.content%></p>
+      </div>
     <%end%>
 <% end %>
