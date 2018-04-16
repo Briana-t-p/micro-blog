@@ -1,3 +1,9 @@
 <link href="styles/layoutstyles.css" rel="stylesheet" type="text/css">
 
 <h1>this is the edit page</h1>
+
+<form class="" action="/edit" method="post">
+  <input type="hidden" name="_method" value="PUT">
+  <input type="text" name="[update]fname" value="<%= @current_user.fname %>">
+  <input type="submit" name="" value="Submit">
+</form>

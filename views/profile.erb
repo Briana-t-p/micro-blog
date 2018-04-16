@@ -2,7 +2,8 @@
 <!-- shows who's logged in -->
 
 <button onclick="location.href='/delete'" id="profile">DELETE PROFILE</button>
-
+<button onclick="location.href='/edit'" id="edit">Edit Name</button>
+<button onclick="location.href='/post'" id="addRecipe">Add recipe</button>
 
 <% if @current_user %>
     <h2><%= @current_user.fname %>'s Profile</h2>
@@ -17,7 +18,3 @@
         <%end%>
         <% end %>
     </div>
-
-<!-- this user options to edit account and add recipe. we didn't finish edit option-->
-<button onclick="location.href='/edit'" id="edit">Edit</button>
-<button onclick="location.href='/post'" id="addRecipe">Add recipe</button>

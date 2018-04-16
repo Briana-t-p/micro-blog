@@ -72,6 +72,14 @@ get '/edit' do
   erb :edit
 end
 
+put '/edit' do
+  edit_profile = @current_user
+  edit_profile.update_attributes(params[:update])
+  redirect "/user/#{@current_user.id}"
+end
+
+# @post = Post.find(paarams[:id])
+
 #this deletes user account
 def delete_user
   current_user
@@ -81,6 +89,7 @@ def delete_user
     session[:user_id] = nil
   end
 end
+
 
 #this is how you delete your account
 get '/delete' do 
@@ -106,4 +115,22 @@ end
 #this is if there is an error in signing in
 get '/error' do
   erb :error
+end
+
+get '/posts_edit/:id' do
+  @post = Post.find(params[:id])
+  erb :posts_edit
+end
+
+put '/posts_edit/:id' do
+  @post = Post.find(params[:id])
+  @post.update_attributes(params[:update])
+  redirect "/user/#{@current_user.id}"
+end
+
+#this is how you delete your account
+post '/delete_post/:id' do
+  @post_delete = Post.find(params[:id])
+  @post_delete.destroy
+  redirect "/user/#{@current_user.id}"
 end
