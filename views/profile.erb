@@ -10,11 +10,16 @@
 
     <h2><% @current_user.posts.each do |post|%></h2>
 
-
 <!-- this shows all your recipes -->
-    <div id="recipe">
-        <h4><%= post.summary%></h4>
-        <p><%= post.content%></p>
-        <%end%>
-        <% end %>
-    </div>
+      <div id="recipe">
+          <h4><%= post.summary%></h4>
+          <p><%= post.content%></p>
+          <form class="" action="/delete_post/<%= post.id%>" method="post">
+                 <input type="submit" name="<%= post.id%>" value="Delete posts">
+          </form>
+          <button onclick="location.href='/posts_edit/<%= post.id %>'" id="edit">Edit Recipe</button>
+
+      </div>
+
+    <% end %>
+<% end %>
